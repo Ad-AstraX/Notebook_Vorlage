@@ -117,6 +117,11 @@ public class NoteView {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TODO: Implementiere das Verhalten des removeNote-Buttons
+                if(userSelection.getSelectedItem()!=null) {
+                    String username = userSelection.getSelectedItem().toString();
+                    userController.deleteNoteFromUser(username, Integer.parseInt(removeNoteIndex.getText()));
+                    updateDisplay();
+                }
             }
         });
     }

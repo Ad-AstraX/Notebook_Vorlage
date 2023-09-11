@@ -28,6 +28,8 @@ public class UserController {
         //TODO: Implementiere die Methode
         if (userCount < users.length) {
             users[userCount] = new User (username);
+            userCount++;
+            return true;
         }
         return false;
     }
@@ -40,7 +42,7 @@ public class UserController {
     public User getUserByUsername(String username) {
         //TODO: Implementiere die Methode
         for (User user : users) {
-            if (user != null && user.getUsername() == username) {
+            if (user != null && user.getUsername().equals(username)) {
                 return user;
             }
         }
